@@ -1,0 +1,22 @@
+{
+  "name": "test-rp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naive17/test-rp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naive17/test-rp/issues"
+  },
+  "homepage": "https://github.com/naive17/test-rp#readme",
+  "dependencies": {
+    "@flaregun-net/proxyflare-for-pages": "^0.1.0"
+  }
+}
