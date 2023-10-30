@@ -83,7 +83,7 @@ const routes: Route[] = [{
     alsoMatchWWWSubdomain: true,
   },
   to: { 
-    url: "https://dverso.notion.site/_assets/*",
+    url: "https://dverso.notion.site/_assets/",
    },
 },
 {
