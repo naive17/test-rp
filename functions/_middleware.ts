@@ -64,7 +64,7 @@ async function addHeader(next : any){
 
 const routes: Route[] = [{
   from: {
-    pattern: "https://test-rp.pages.dev/tos",
+    pattern: "https://test-rp.pages.dev/tos/*",
     alsoMatchWWWSubdomain: true,
   },
   to: { 
