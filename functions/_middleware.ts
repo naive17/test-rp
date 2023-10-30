@@ -70,32 +70,15 @@ const routes: Route[] = [{
   to: { 
     url: "https://flourished-inconsistency-583577.framer.app",
    },
-},
-{
-  from: {
-    pattern: "/privacy-policy",
-    alsoMatchWWWSubdomain: true,
-  },
-  to: { url: "https://dverso.notion.site/Privacy-Policy-a62e8115e30646d497616912a73e41c0" },
 }];
-// `PagesFunction` is from @cloudflare/workers-types
-export const onRequest: PagesFunction[] = [
-  (context) =>
-    proxyflare({
-      config: {
-        global: { debug: true },
-        routes,
-      },
-    })(context),
-  // other Pages plugins and middleware
-]
-/*
 
-export const onRequestGet: PagesFunction<{}> = async ({
-  request,
-  env,
-  next,
-}) => {
+
+export const onRequestGet: PagesFunction<{}> = async (context) => {
+  let {
+    request,
+    env,
+    next,
+  } = context;
   try{
     const url = new URL(request.url);
     if (/^\/map\/([^\/]+)$/.test(url.pathname)) {
@@ -127,10 +110,14 @@ export const onRequestGet: PagesFunction<{}> = async ({
       response.headers.append("Origin-Agent-Cluster", "?1");
       return response;
     }else{
-      return await addHeader(next)
+      return proxyflare({
+        config: {
+          global: { debug: true },
+          routes,
+        },
+      })(context)
     }
   }catch(e){
     return await addHeader(next)
   }
-  
-};*/
+};
