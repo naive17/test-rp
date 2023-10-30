@@ -71,6 +71,13 @@ const routes: Route[] = [{
 },
 {
   from: {
+    pattern: "https://test-rp.pages.dev/_assets",
+    alsoMatchWWWSubdomain: true,
+  },
+  to: { url: "https://dverso.notion.site/_assets" },
+},
+{
+  from: {
     pattern: "/privacy-policy",
     alsoMatchWWWSubdomain: true,
   },
