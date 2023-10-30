@@ -68,22 +68,7 @@ const routes: Route[] = [{
     alsoMatchWWWSubdomain: true,
   },
   to: { 
-    url: "https://dverso.notion.site/Terms-of-Service-a8eb09346c31468ba0879a5da89fa4d8",
-    website : {
-      mode : "spa",
-      resources : [
-        "https://test-rp.pages.dev/tos/_assets/*",
-      ]
-    }
-   },
-},
-{
-  from: {
-    pattern: "https://test-rp.pages.dev/_assets/*",
-    alsoMatchWWWSubdomain: true,
-  },
-  to: { 
-    url: "https://dverso.notion.site/_assets/",
+    url: "https://flourished-inconsistency-583577.framer.app",
    },
 },
 {
