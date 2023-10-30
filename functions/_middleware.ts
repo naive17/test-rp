@@ -97,7 +97,6 @@ export const onRequestGet: PagesFunction<{}> = async (context) => {
       } = { success : false};
      
       data = await fetch("https://api.dverso.io/api/maps/og/"+alias).then((res) => res.json());
-      requestsTimestamps.set(alias, { timestamp: Date.now(), data });
       
       if (data.success == false){
         return await addHeader(next)
