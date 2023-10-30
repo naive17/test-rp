@@ -64,7 +64,7 @@ async function addHeader(next : any){
 
 const routes: Route[] = [{
   from: {
-    pattern: "/tos",
+    pattern: "https://test-rp.pages.dev/tos",
     alsoMatchWWWSubdomain: true,
   },
   to: { url: "https://dverso.notion.site/Terms-of-Service-a8eb09346c31468ba0879a5da89fa4d8" },
