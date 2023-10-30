@@ -67,14 +67,14 @@ const routes: Route[] = [{
     pattern: "https://test-rp.pages.dev/tos",
     alsoMatchWWWSubdomain: true,
   },
-  to: { url: "https://dverso.notion.site/Terms-of-Service-a8eb09346c31468ba0879a5da89fa4d8" },
-},
-{
-  from: {
-    pattern: "https://test-rp.pages.dev/_assets",
-    alsoMatchWWWSubdomain: true,
-  },
-  to: { url: "https://dverso.notion.site/_assets" },
+  to: { 
+    url: "https://dverso.notion.site/Terms-of-Service-a8eb09346c31468ba0879a5da89fa4d8",
+    website : {
+      resources : [
+        "https://test-rp.pages.dev/_assets/*",
+      ]
+    }
+   },
 },
 {
   from: {
