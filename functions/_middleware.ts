@@ -20,7 +20,15 @@ const routes: Route[] = [
       pattern: "https://viadeicondotti.store/*",
       alsoMatchWWWSubdomain: true,
     },
-    to: { url: "https://www.1-7.it/vdc" },
+    to: { 
+      url: "https://www.1-7.it/vdc",
+      "website": {
+          "resources": [
+            "https://www.1-7.it/vdc/wp-content/*",
+            "https://www.1-7.it/vdc/wp-includes/*"
+          ]
+      }
+    },
   },
 ]
 // `PagesFunction` is from @cloudflare/workers-types
@@ -32,11 +40,6 @@ export const onRequest: PagesFunction[] = [
         routes,
       },
     })(context)
-  },
-  async (context) => {
-    const rewriter = new HTMLRewriter()
-      .on("a", new LinkRewriter())
-    return rewriter.transform(await context.next())
   }
   // other Pages plugins and middleware
 ]
