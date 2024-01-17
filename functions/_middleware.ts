@@ -21,7 +21,7 @@ const routes: Route[] = [
       alsoMatchWWWSubdomain: true,
     },
     to: { 
-      url: "https://www.1-7.it/vdc",
+      url: "https://www.1-7.it/vdc/",
       "website": {
           "resources": [
             "https://www.1-7.it/vdc/wp-content/*",
