@@ -22,10 +22,6 @@ const routes: Route[] = [
     },
     to: { 
       url: "https://www.1-7.it/vdc/",
-      "website": {
-          "resources": [
-          ]
-      }
     },
   },
 ]
