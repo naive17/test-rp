@@ -24,8 +24,6 @@ const routes: Route[] = [
       url: "https://www.1-7.it/vdc/",
       "website": {
           "resources": [
-            "https://www.1-7.it/vdc/wp-content/*",
-            "https://www.1-7.it/vdc/wp-includes/*"
           ]
       }
     },
