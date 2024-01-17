@@ -14,7 +14,7 @@ export const onRequest: PagesFunction[] = [
   (context) =>
     proxyflare({
       config: {
-        global: { debug: false },
+        global: { debug: true },
         routes,
       },
     })(context),
