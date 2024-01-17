@@ -6,7 +6,7 @@ const routes: Route[] = [
       pattern: "https://viadeicondotti.store/*",
       alsoMatchWWWSubdomain: true,
     },
-    to: { url: "httos://www.1-7.it/vdc" },
+    to: { url: "https://www.1-7.it/vdc" },
   },
 ]
 // `PagesFunction` is from @cloudflare/workers-types
