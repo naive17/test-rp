@@ -1,5 +1,19 @@
 import proxyflare from "@flaregun-net/proxyflare-for-pages"
 
+
+class LinkRewriter {
+  element(element) {
+    if (element.hasAttribute("href")) {
+      if (element.getAttribute("href").startsWith("https://www.1-7.it/vdc")) {
+        element.setAttribute(
+          "href",
+          element.getAttribute("href").replace("https://www.1-7.it/vdc", "https://viadeicondotti.store")
+        )
+      }
+    }
+  }
+}
+
 const routes: Route[] = [
   {
     from: {
@@ -11,12 +25,18 @@ const routes: Route[] = [
 ]
 // `PagesFunction` is from @cloudflare/workers-types
 export const onRequest: PagesFunction[] = [
-  (context) =>
-    proxyflare({
+  (context) => {
+    return proxyflare({
       config: {
-        global: { debug: true },
+        global: { debug: false },
         routes,
       },
-    })(context),
+    })(context)
+  },
+  async (context) => {
+    const rewriter = new HTMLRewriter()
+      .on("a", new LinkRewriter())
+    return rewriter.transform(await context.next())
+  }
   // other Pages plugins and middleware
 ]
